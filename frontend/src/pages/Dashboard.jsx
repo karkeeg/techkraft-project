@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { Link } from 'react-router-dom';
 import api from '../services/api';
 import PropertyCard from '../components/PropertyCard';
 import toast from 'react-hot-toast';
@@ -48,6 +49,9 @@ const Dashboard = () => {
           <p style={{ color: 'var(--text-muted)' }}>Role: <span style={{ textTransform: 'capitalize' }}>{user.role}</span></p>
         </div>
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <Link to="/qr-receive" style={{ color: 'var(--text)', textDecoration: 'none', fontWeight: 500, display: 'flex', alignItems: 'center' }}>
+            <span style={{ border: '1px solid var(--primary)', color: 'var(--primary)', padding: '0.3rem 0.8rem', borderRadius: '4px', fontSize: '0.9rem', fontWeight: 'bold' }}>QR Upload</span>
+          </Link>
           <a href="#favourites" style={{ color: 'var(--text)', textDecoration: 'none', fontWeight: 500 }}>
             Your Favourites <span style={{ background: 'var(--primary)', color: 'white', padding: '0.1rem 0.5rem', borderRadius: '1rem', fontSize: '0.8rem', marginLeft: '0.3rem' }}>{favourites.length}</span>
           </a>
